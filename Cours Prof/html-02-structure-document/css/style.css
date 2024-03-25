@@ -1,0 +1,27 @@
+
+body {
+    color: darkslateblue;
+    font-size: 18px;
+}
+
+
+section {
+    /* marge du bas */
+    margin-bottom: 30px;
+}
+
+    section h1 {
+        color: green;
+    }
+
+
+
+
+
+h1 {
+    /* couleur de la typo */
+    color: red;
+    /* taille de la typo */  
+    font-size: 48px;
+}
+
