@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Structure de document HTML</title>
+</head>
+
+<body>
+    <header>
+        <div>MonSuperSite</div>
+        <nav>
+            <!-- Menu à un seul niveau -->
+            <!-- Emmet: a[href="#page-$"]{Page $}*5 -->
+            <!-- <a href="#page-1">Page 1</a>
+            <a href="#page-2">Page 2</a>
+            <a href="#page-3">Page 3</a>
+            <a href="#page-4">Page 4</a>
+            <a href="#page-5">Page 5</a> -->
+
+            <!-- Menu à plusieurs niveaux -->
+            <!-- Emmet: ul>(li>a[href="#page-$"]{Page $})*5 -->
+            <ul>
+                <li><a href="#page-1">Page 1</a></li>
+
+                <li>
+                    <a href="#page-2">Page 2</a>
+                    <ul>
+                        <li><a href="#page-2-1">Page 2-1</a></li>
+                        <li><a href="#page-2-2">Page 2-2</a></li>
+                        <li><a href="#page-2-3">Page 2-3</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#page-3">Page 3</a></li>
+                <li><a href="#page-4">Page 4</a></li>
+                <li><a href="#page-5">Page 5</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h1>Bienvenue chez nous !</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus architecto quod totam a, obcaecati
+                porro vero eos tenetur qui animi, corporis voluptatem, repellendus unde blanditiis placeat. Voluptate
+                temporibus repellat veniam?
+                Facilis fuga placeat ab nihil. Corrupti reiciendis cupiditate deleniti amet explicabo praesentium harum.
+                Veritatis veniam eaque velit! Dignissimos consequuntur praesentium molestias quis quibusdam eos nam
+                laboriosam omnis eius hic. Odio.
+                Provident iusto necessitatibus adipisci. Mollitia provident quibusdam, voluptatibus, velit ab suscipit
+                odit eum ex sapiente ipsa beatae. Id, ab necessitatibus dolore accusantium laboriosam modi minus vel
+                porro deserunt pariatur delectus!
+                Reprehenderit ipsa quam est quisquam nisi maxime possimus fugiat aspernatur quidem, saepe autem facere
+                ut similique laboriosam officia dolorum totam tempore molestiae, temporibus fuga minima nam illum dicta
+                dolorem. Sequi!
+                Earum consectetur mollitia quod ullam natus facilis fugit eos, culpa accusamus molestias, nam,
+                consequatur aliquid! Quae magni labore rerum hic, assumenda cum voluptatem accusantium placeat, officia,
+                nemo sint modi? Numquam!
+            </p>
+        </section>
+
+        <!-- Top 3 des ventes -->
+        <section>
+            <h2>Top 3 des ventes du mois</h2>
+            <ol>
+                <li>
+                    <a href="#">
+                        <h3>Tartiflette à pédales</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam odio repellendus error quia
+                            reprehenderit excepturi cum quasi molestiae, magnam vel atque eaque libero deleniti, alias
+                            dignissimos vitae, exercitationem maxime officiis.
+                        </p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <h3>Gauffre à réaction</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam odio repellendus error quia
+                            reprehenderit excepturi cum quasi molestiae, magnam vel atque eaque libero deleniti, alias
+                            dignissimos vitae, exercitationem maxime officiis.
+                        </p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <h3>Trotinette nucléaire</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam odio repellendus error quia
+                            reprehenderit excepturi cum quasi molestiae, magnam vel atque eaque libero deleniti, alias
+                            dignissimos vitae, exercitationem maxime officiis.
+                        </p>
+                    </a>
+                </li>
+            </ol>
+        </section>
+
+        <!-- Témoignages -->
+        <section>
+            <h2>Témoignages de nos clients</h2>
+            <ul>
+                <li>
+                    <h3>Les meilleurs du monde</h3>
+                    <p>
+                        de Maman - Hier
+                    </p>
+                    <p>
+                        Je recommande c'est le plus beau et le plus fort. Bisous
+                    </p>
+                </li>
+                <li>
+                    <h3>Les moins cher du marché</h3>
+                    <p>
+                        de Bernard - Hier
+                    </p>
+                    <p>
+                        Bravo frangin !
+                    </p>
+                </li>
+                <li>
+                    <h3>Venez acheter ici</h3>
+                    <p>
+                        de Papa - Hier
+                    </p>
+                    <p>
+                        Trop bien !
+                    </p>
+                </li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        &copy;2024 - MonSuperSite - <a href="#">Mentions Légales</a>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

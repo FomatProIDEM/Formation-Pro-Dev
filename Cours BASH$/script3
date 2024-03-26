@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo " ........................... "
+echo " Quel est le nom du fichier ? "
+read name
+echo " Ou voulez vous l'enregistrer ?"
+read chemin
+echo " Quel est le message "
+read msg
+
+FICHIER="$name.txt"
+touch "$FICHIER" && echo $msg >> "$FICHIER"
+

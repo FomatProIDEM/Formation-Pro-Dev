@@ -1,0 +1,20 @@
+* {
+    box-sizing: border-box;
+}
+
+header {
+    /* couleur de fond */
+    background-color: gray;
+    /* bordure épaisseur/style/couleur */
+    border: 3px solid red;
+    /* marges extérieures */
+    /* haut / droite / bas / gauche */
+    /* haut / droite-gauche / bas */
+    /* haut-bas / droite-gauche */
+    /* haut-droite-bas-gauche */
+    margin: 0 auto;
+    /* "margin intérieure" */
+    padding: 15px;
+    /* largeur du bloc */
+    width: 300px;
+}

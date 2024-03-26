@@ -1,0 +1,10 @@
+#!/bin/bash
+
+
+file="$1.txt"
+directory="$2"
+content="$3"
+
+touch "$2/$file" && echo "$content" >> "$2/$file"
+touch "$2/$file" && echo $3 >> "$2/$file"
+cat "$2/$file"

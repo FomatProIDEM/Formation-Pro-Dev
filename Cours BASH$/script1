@@ -1,0 +1,27 @@
+#!/bin/bash
+
+
+#    .---------- constant part!
+#    vvvv vvvv-- the code from above
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+G='\033[0;32m'
+tab=("Lotfi" "Loic" "Franck" "Salah")
+
+nombre=10
+echo " ################################"
+printf " I ${RED}love${NC} ${RED}StackOverflow ${NC}\n "
+echo " ################################"
+
+ # pwd
+rep=$(pwd)
+echo "################################"
+echo "Bienvenue dans le repertoire $rep"
+echo "le deuxieme èlève est ${tab[0]}"
+if nombre > 1
+	echo "test"
+fi
+
+for el in ${tab[*]}; do echo ${el}; done
+
+

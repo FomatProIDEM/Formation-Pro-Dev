@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="invisible sentence">
+        <!--<script>alert('toto')</script> 
+        Triangle d'or , Users lis de gauche a droite 
+        Data user souris-->
+        <link rel="stylesheet" href="style.css">
+        <title>Intro html</title>
+</head>
+    
+<body>
+    <div>
+        <h1>Mon titre</h1>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis rem velit repellendus ullam error, aliquam beatae, placeat sint dolore saepe debitis nam numquam? Cum porro necessitatibus numquam quis incidunt iste!
+        </p>
+        <p>
+            <ul>
+                <li id="250">Sucre</li>
+                <li id="200">Farine</li>
+                <li id="5">Oeufs</li>
+            </ul>
+
+
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit repellendus neque quisquam quis beatae aliquid at natus itaque facilis ad, soluta quasi cum, aut nostrum magni, illo dolore voluptas ipsam?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed illo natus laborum quaerat corrupti quasi dicta, iste aut delectus ut adipisci fugit atque odit facilis, autem doloribus, cumque est. Qui.
+        </p>
+    </div>
+<div>
+    <h1>Click for ingredients measure</h1>
+
+<button id="incrementButton">Add Cake</button>
+
+<div id="ingredientList">
+    <!-- Ingredient quantities will be displayed here -->
+</div>
+
+<script>
+    // Define the recipe for one cake
+    const recipe = {
+        "Sucre": 250,  // grams
+        "Farine": 200, // grams
+        "Oeufs": 5     // number of eggs
+    };
+
+    // Initialize counter
+    let numCakes = 0;
+    let cake= 0;
+    // Function to calculate total ingredients for the specified number of cakes
+    function calculateTotalIngredients(numCakes) {
+        const totalIngredients = {};
+        // Scale the recipe for the specified number of cakes
+        for (const [ingredient, quantityPerCake] of Object.entries(recipe)) {
+            totalIngredients[ingredient] = quantityPerCake * numCakes;
+        }
+        cake=+1;
+        return totalIngredients;
+    }
+
+    // Function to update ingredient list on the page
+    function updateIngredientList() {
+        const ingredientsForCakes = calculateTotalIngredients(numCakes);
+        const ingredientListDiv = document.getElementById("ingredientList");
+        ingredientListDiv.innerHTML = "<h2>Ingredients needed:</h2>";
+        for (const [ingredient, quantity] of Object.entries(ingredientsForCakes)) {
+            ingredientListDiv.innerHTML += `<p>${ingredient}: ${quantity}</p>`;
+        }
+    }
+
+    // Add event listener to the button
+    const incrementButton = document.getElementById("incrementButton");
+    incrementButton.addEventListener("click", function() {
+        numCakes++; // Increment the number of cakes
+        updateIngredientList(); // Update the displayed ingredient list
+    });
+
+    // Initial update of the ingredient list
+    updateIngredientList();
+</script>
+    <h2 id="partie-sous-titre">LOUREM</h2>
+    <a href="https://www.w3schools.com/" target="_blank">Visit W3Schools!</a>
+    <p>
+        Click here to go on google
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit.landitiis rem velit repellendus ullam error, aliquam beatae, placeat sint dolore saepe debitis nam numquam? Cum porro necessitatibus numquam quis incidunt iste!
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit.landitiis rem velit repellendus ullam error, aliquam beatae, placeat sint dolore saepe debitis nam numquam? Cum porro necessitatibus numquam quis incidunt iste!
+    </p>
+    <p>
+        <img src="Bob-leponge.png" alt="Bob-leponge">
+        Lorem <span>ipsum dolor</span>ipsum dolor sit <em>amet</em>amet, consectetur adipisicing elit. Vero enim natus consequatur est iure blanditiis vitae debitis nulla tempora exercitationem. Aspernatur culpa sed est quam veniam iusto optio fugit enim.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit repellendus neque quisquam quis beatae aliquid at natus itaque facilis ad, soluta quasi cum, aut nostrum magni, illo dolore voluptas ipsam?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed illo natus laborum quaerat corrupti quasi dicta, iste aut delectus ut adipisci fugit atque odit facilis, autem doloribus, cumque est. Qui.
+    </p>
+<section>
+
+</section>
+</div>
+
+    <div>
+        <p>
+            
+            <a href="partie-sous-titre">Click</a>           
+        <p>
+
+    </div>
+        <script src ="script.js"></script>
+</body>
+
+
+
+</html>
+
+
