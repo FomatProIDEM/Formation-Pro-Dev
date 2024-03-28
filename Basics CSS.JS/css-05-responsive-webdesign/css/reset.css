@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    outline: 0; /* "halo" autour des input lorsque le curseur est dedans */
+    padding: 0;
+}
+
+ol,
+ul {
+    list-style: none; /* Suppression des puces de liste */
+}
+
+a {
+    color: inherit; /* Annule la couleur du navigateur et reprend celle donnée par héritage */
+    text-decoration: none; /* Supprime le soulignement */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    /* Garantit une hauteur minimum quelque soit le contenu */
+    /* vh= pourcentage de la hauteur de la zone d'affichage ("viewport height") */
+    min-height: 100vh;
+}
+
+main {
+    /* Demande à l'élémet d'occuper toute la place non-utilisée du parent flex */
+    flex-grow: 1;
+}

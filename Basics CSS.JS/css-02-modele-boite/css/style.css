@@ -18,3 +18,10 @@ header {
     /* largeur du bloc */
     width: 300px;
 }
+
+
+.toto {
+    padding: 2.5px;
+    background-color: red;
+    opacity: 0.85;
+}
