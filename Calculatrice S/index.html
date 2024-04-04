@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.4/math.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #003366;
+            background-image: linear-gradient(45deg, #003366, #660066);
+            animation: gradientAnimation 10s infinite alternate;
+        }
+        
+        .calculator {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            animation: slideIn 0.5s ease;
+        }
+        
+        .calculator input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            font-size: 20px;
+            text-align: right;
+            border: none;
+            border-bottom: 2px solid #ccc;
+            outline: none;
+        }
+        
+        .calculator button {
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            font-size: 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .calculator button:hover {
+            background-color: #e0e0e0;
+        }
+
+        /* Cursor animation */
+        body {
+            cursor: url('https://cdn.icon-icons.com/icons2/2643/PNG/512/cursor_arrow_icon_157990.png'), auto;
+        }
+
+        @keyframes cursorAnimation {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .calculator button {
+            animation: cursorAnimation 0.5s infinite alternate;
+        }
+
+        /* Background animation */
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calculator">
+        <input type="text" id="result" readonly>
+        <div>
+            <button onclick="appendNumber('7')">7</button>
+            <button onclick="appendNumber('8')">8</button>
+            <button onclick="appendNumber('9')">9</button>
+            <button onclick="clearInput()">C</button>
+            <button onclick="appendOperator('sin(')">sin</button>
+            <button onclick="cos()">cos</button>
+            <button onclick="appendOperator('tan(')">tan</button>
+            <button onclick="appendOperator('(')">(</button>
+            <button onclick="appendOperator(')')">)</button>
+        </div>
+        <div>
+            <button onclick="appendNumber('4')">4</button>
+            <button onclick="appendNumber('5')">5</button>
+            <button onclick="appendNumber('6')">6</button>
+            <button onclick="appendOperator('+')">+</button>
+            <button onclick="appendOperator('^')">x^y</button>
+            <button onclick="appendOperator('sqrt(')">sqrt</button>
+            <button onclick="appendOperator('log(')">log</button>
+            <button onclick="appendNumber('3.14159')">π</button>
+            <button onclick="appendOperator('exp(')">exp</button>
+        </div>
+        <div>
+            <button onclick="appendNumber('1')">1</button>
+            <button onclick="appendNumber('2')">2</button>
+            <button onclick="appendNumber('3')">3</button>
+            <button onclick="appendOperator('-')">-</button>
+            <button onclick="appendOperator('%')">%</button>
+            <button onclick="appendOperator('**')">x^2</button>
+            <button onclick="appendOperator('!')">!</button>
+            <button onclick="appendNumber('0')">0</button>
+            <button onclick="appendDecimal()">.</button>
+        </div>
+        <div>
+            <button onclick="calculate()">=</button>
+            <button onclick="appendOperator('/')">/</button>
+            <button onclick="resetCalculator()">Reset</button> <!-- New Reset Button -->
+        </div>
+    </div>
+
+    <script>
+        function cos() {
+            let degrees = parseFloat(result.value);
+            let radians = degrees * (Math.PI / 180);
+            result.value = Math.cos(radians);  
+        }
+
+        let result = document.getElementById('result');
+
+        function appendNumber(number) {
+            result.value += number;
+        }
+
+        function appendOperator(operator) {
+            result.value += operator;
+        }
+
+        function appendDecimal() {
+            if (!result.value.includes('.')) {
+                result.value += '.';
+            }
+        }
+
+        function calculate() {
+            try {
+                result.value = math.eval(result.value); // Using math.eval from math.js
+            } catch (error) {
+                result.value = 'Error';
+            }
+            // Clear input after calculation
+            setTimeout(function() {
+                clearInput();
+            }, 2000); // Adjust timeout as needed
+        }
+
+        function clearInput() {
+            result.value = '';
+        }
+
+        function resetCalculator() {
+            clearInput(); // Clear the input field
+        }
+    </script>
+</body>
+</html>
+

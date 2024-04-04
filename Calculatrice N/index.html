@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #003366; /* Updated background color */
+            background-image: linear-gradient(45deg, #003366, #660066); /* Updated background gradient */
+            animation: gradientAnimation 10s infinite alternate; /* Background animation */
+        }
+        
+        .calculator {
+            background-color: rgba(255, 255, 255, 0.8); /* Updated calculator background color with transparency */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            animation: slideIn 0.5s ease;
+        }
+        
+        .calculator input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            font-size: 20px;
+            text-align: right;
+            border: none;
+            border-bottom: 2px solid #ccc;
+            outline: none;
+        }
+        
+        .calculator button {
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            font-size: 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .calculator button:hover {
+            background-color: #e0e0e0;
+        }
+
+        /* Cursor animation */
+        body {
+            cursor: url('https://cdn.icon-icons.com/icons2/2643/PNG/512/cursor_arrow_icon_157990.png'), auto; /* Custom cursor image */
+        }
+
+        @keyframes cursorAnimation {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .calculator button {
+            animation: cursorAnimation 0.5s infinite alternate; /* Cursor animation */
+        }
+
+        /* Background animation */
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="result" readonly>
+        <div>
+            <button onclick="appendNumber('7')">7</button>
+            <button onclick="appendNumber('8')">8</button>
+            <button onclick="appendNumber('9')">9</button>
+            <button onclick="clearInput()">C</button>
+        </div>
+        <div>
+            <button onclick="appendNumber('4')">4</button>
+            <button onclick="appendNumber('5')">5</button>
+            <button onclick="appendNumber('6')">6</button>
+            <button onclick="appendOperator('+')">+</button>
+        </div>
+        <div>
+            <button onclick="appendNumber('1')">1</button>
+            <button onclick="appendNumber('2')">2</button>
+            <button onclick="appendNumber('3')">3</button>
+            <button onclick="appendOperator('-')">-</button>
+        </div>
+        <div>
+            <button onclick="appendNumber('0')">0</button>
+            <button onclick="appendDecimal()">.</button>
+            <button onclick="calculate()">=</button>
+            <button onclick="appendOperator('*')">*</button>
+        </div>
+        <div>
+            <button onclick="appendOperator('/')">/</button>
+        </div>
+    </div>
+
+    <script>
+        let input = document.getElementById('result');
+
+        function appendNumber(number) {
+            input.value += number;
+        }
+
+        function appendOperator(operator) {
+            input.value += operator;
+        }
+
+        function appendDecimal() {
+            if (!input.value.includes('.')) {
+                input.value += '.';
+            }
+        }
+
+        function calculate() {
+            try {
+                input.value = eval(input.value);
+            } catch (error) {
+                input.value = 'Error';
+            }
+        }
+
+        function clearInput() {
+            input.value = '';
+        }
+    </script>
+</body>
+</html>
